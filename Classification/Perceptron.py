@@ -151,26 +151,3 @@ class Perceptron():
                 predictionList.append(Perceptron.__unitStep(NP.dot(self.__weight, testSet[cursor, :])))
 
         return predictionList
-
-    @staticmethod
-    def fileToArray(filepath, seperator):
-        """
-        This is just used as a makeshift to parse a tsv into a numpy array.
-        In RL production code, you wanna use Panda module.
-        :param filepath: file path of the TSV file
-        :param seperator: seperator
-        :return:
-        """
-        f = open(filepath)
-
-        a = [s.replace("\n", "").split(seperator) for s in f.readlines()]
-        a = NP.array(a, dtype=float)
-        a = NP.array(a, dtype=int)
-
-        f.close()
-        return a
-
-
-
-
-
